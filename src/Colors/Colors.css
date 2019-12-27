@@ -1,0 +1,22 @@
+.grid {
+	margin: 10px 0 0;
+}
+
+.score {
+	margin: 10px;
+}
+
+#left {
+	float: left;
+	font-size: large;
+}
+
+#right {
+	float: right;
+	font-size: large;
+}
+
+#info {
+	font-size: large;
+	color: black;
+}
