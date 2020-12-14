@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/color-grid-game/static/css/main.d3dabe44.chunk.css",
+    "main.js": "/color-grid-game/static/js/main.1f3226a1.chunk.js",
+    "main.js.map": "/color-grid-game/static/js/main.1f3226a1.chunk.js.map",
+    "runtime-main.js": "/color-grid-game/static/js/runtime-main.adb57117.js",
+    "runtime-main.js.map": "/color-grid-game/static/js/runtime-main.adb57117.js.map",
+    "static/js/2.68f3adbf.chunk.js": "/color-grid-game/static/js/2.68f3adbf.chunk.js",
+    "static/js/2.68f3adbf.chunk.js.map": "/color-grid-game/static/js/2.68f3adbf.chunk.js.map",
+    "index.html": "/color-grid-game/index.html",
+    "precache-manifest.7a3ff60613a1b493a82f7d07d83811db.js": "/color-grid-game/precache-manifest.7a3ff60613a1b493a82f7d07d83811db.js",
+    "service-worker.js": "/color-grid-game/service-worker.js",
+    "static/css/main.d3dabe44.chunk.css.map": "/color-grid-game/static/css/main.d3dabe44.chunk.css.map",
+    "static/js/2.68f3adbf.chunk.js.LICENSE": "/color-grid-game/static/js/2.68f3adbf.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.adb57117.js",
+    "static/js/2.68f3adbf.chunk.js",
+    "static/css/main.d3dabe44.chunk.css",
+    "static/js/main.1f3226a1.chunk.js"
+  ]
+}
