@@ -12,20 +12,20 @@ export default class Colors extends React.Component {
 			findMatch: false,
 			score: 0,
 			gridSize: 5,
-			highScore: 0
+			highScore: 0,
 		};
 
-		this.highlightMatchingColors = event => {
+		this.highlightMatchingColors = (event) => {
 			this.setState({ findMatch: true });
 		};
 
-		this.checkMatch = color => {
+		this.checkMatch = (color) => {
 			if (color === this.state.anyColorFromColorMatrix) {
 				this.setState(
 					{
-						score: this.state.score + 20
+						score: this.state.score + 20,
 					},
-					function() {
+					function () {
 						this.state.score > this.state.highScore
 							? this.setState({ highScore: this.state.score })
 							: console.log(
@@ -46,14 +46,14 @@ export default class Colors extends React.Component {
 			grid,
 			colorMatrix,
 			anyColorFromColorMatrix,
-			gridSize
+			gridSize,
 		} = initColorsGrid(this.state.gridSize);
 
 		this.setState({
 			grid,
 			colorMatrix,
 			anyColorFromColorMatrix,
-			gridSize
+			gridSize,
 		});
 	}
 
@@ -61,15 +61,19 @@ export default class Colors extends React.Component {
 		this.setState(initColorsGrid(this.state.gridSize));
 		this.setState({
 			findMatch: false,
-			score: 0
+			score: 0,
 		});
 	}
 
-	handleLevels = gridSize => {
-		this.setState({ gridSize, highScore: 0 }, function() {
+	handleLevels = (gridSize) => {
+		this.setState({ gridSize, highScore: 0 }, function () {
 			this.handleChangeColor();
 		});
 	};
+
+	getGridStyle(gridSize) {
+		return { minWidth: gridSize === 5 ? 300 : gridSize === 10 ? 500 : 700 };
+	}
 
 	renderGrid() {
 		return (
@@ -110,7 +114,10 @@ export default class Colors extends React.Component {
 
 	render() {
 		return (
-			<div className="Colors container">
+			<div
+				className="Colors container"
+				style={this.getGridStyle(this.state.gridSize)}
+			>
 				<h3>Where Am I?</h3>
 				<div className="score">
 					<label id="left">Your Score: {this.state.score}</label>
@@ -159,7 +166,7 @@ export default class Colors extends React.Component {
 	}
 }
 
-const initColorsGrid = gridSize => {
+const initColorsGrid = (gridSize) => {
 	const grid = [];
 	const colorMatrix = [];
 	for (let row = 0; row < gridSize; row++) {
@@ -180,22 +187,12 @@ const initColorsGrid = gridSize => {
 const nodeCoordinates = (row, col) => {
 	return {
 		row,
-		col
+		col,
 	};
 };
 
-const randomColor = () =>
-	"#" +
-	Math.random()
-		.toString(16)
-		.substr(-6);
+const randomColor = () => "#" + Math.random().toString(16).substr(-6);
 
-const getRandomIndex = modOf => {
-	return (
-		parseInt(
-			Math.random()
-				.toString()
-				.substr(-1)
-		) % modOf
-	);
+const getRandomIndex = (modOf) => {
+	return parseInt(Math.random().toString().substr(-1)) % modOf;
 };
